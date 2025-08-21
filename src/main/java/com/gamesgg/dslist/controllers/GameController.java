@@ -1,6 +1,7 @@
 package com.gamesgg.dslist.controllers;
 
 
+import com.gamesgg.dslist.dto.GameDTO;
 import com.gamesgg.dslist.dto.GameMinDTO;
 import com.gamesgg.dslist.entities.Game;
 import com.gamesgg.dslist.services.GameService;
@@ -19,6 +20,13 @@ public class GameController {
 
     @Autowired
     private GameService gameService;
+
+    @GetMapping(value = "/{id}")
+    public GameDTO findById(@PathVariable  Long id){
+      return gameService.findById(id);
+
+    }
+
 
     @GetMapping
     public List<GameMinDTO> findAll(){

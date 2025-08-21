@@ -23,7 +23,15 @@ public class GameDTO {
     }
 
     public GameDTO(Game entity){
-        BeanUtils.copyProperties(entity,this);
+        id = entity.getId();
+        title = entity.getTitle();
+        year = entity.getYear();
+        genre = entity.getGenre();
+        platforms = entity.getPlatforms();
+        score = entity.getScore();
+        imgUrl = entity.getImgUrl();
+        shortDescription = entity.getShortDescription();
+        longDescription = entity.getLongDescription();
     }
 
     public Long getId() {
